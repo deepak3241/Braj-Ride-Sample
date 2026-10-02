@@ -1,0 +1,3062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BRAJ RIDE | Premium Taxi & Tours</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+:root{
+    --orange:#f5a623;
+    --orange2:#ffc45c;
+    --black:#111111;
+    --dark:#191919;
+    --dark2:#222222;
+    --cream:#f8f5ee;
+    --white:#ffffff;
+    --text:#222;
+    --muted:#777;
+    --border:#e4dfd6;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    color:var(--text);
+    background:var(--cream);
+    overflow-x:hidden;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+select,
+textarea{
+    font-family:inherit;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+.section{
+    padding:105px 0;
+}
+
+.label{
+    color:#d68b14;
+    font-size:10px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.title{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(42px,5.5vw,72px);
+    line-height:.98;
+    font-weight:600;
+}
+
+.description{
+    color:var(--muted);
+    line-height:1.8;
+    max-width:600px;
+    margin-top:20px;
+}
+
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.topbar{
+    background:#0b0b0b;
+    color:#aaa;
+    padding:9px 5%;
+    display:flex;
+    justify-content:space-between;
+    font-size:10px;
+    letter-spacing:1px;
+}
+
+.topbar strong{
+    color:var(--orange2);
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar{
+    position:absolute;
+    top:34px;
+    left:0;
+    width:100%;
+    z-index:100;
+    padding:22px 5%;
+    transition:.35s;
+}
+
+.navbar.scrolled{
+    position:fixed;
+    top:0;
+    background:rgba(17,17,17,.95);
+    backdrop-filter:blur(15px);
+    box-shadow:0 10px 40px rgba(0,0,0,.25);
+}
+
+.nav-inner{
+    max-width:1280px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    color:white;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-icon{
+    width:43px;
+    height:43px;
+    background:var(--orange);
+    color:#111;
+    display:grid;
+    place-items:center;
+    font-weight:700;
+    transform:skew(-8deg);
+}
+
+.logo-text{
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.logo-text small{
+    display:block;
+    color:#999;
+    font-size:7px;
+    letter-spacing:3px;
+    font-weight:400;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    color:#ddd;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-size:10px;
+}
+
+.nav-links a{
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:var(--orange2);
+}
+
+.nav-book{
+    color:#111;
+    background:var(--orange);
+    padding:13px 21px;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-weight:700;
+}
+
+.menu-btn{
+    display:none;
+    background:none;
+    border:0;
+    color:white;
+    font-size:26px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:91vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+
+    background:
+    linear-gradient(90deg,
+    rgba(0,0,0,.88),
+    rgba(0,0,0,.42)),
+    url("https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2000&q=90")
+    center/cover;
+}
+
+.hero-content{
+    color:white;
+    max-width:760px;
+    padding-top:100px;
+}
+
+.hero-kicker{
+    color:var(--orange2);
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:10px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(55px,8vw,105px);
+    line-height:.87;
+    font-weight:600;
+}
+
+.hero h1 span{
+    color:var(--orange2);
+}
+
+.hero p{
+    max-width:580px;
+    color:#ccc;
+    line-height:1.8;
+    margin:28px 0;
+}
+
+.hero-actions{
+    display:flex;
+    gap:13px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    padding:16px 27px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-size:10px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn-orange{
+    background:var(--orange);
+    color:#111;
+}
+
+.btn-orange:hover{
+    background:var(--orange2);
+}
+
+.btn-outline{
+    border:1px solid rgba(255,255,255,.5);
+    color:white;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:#111;
+}
+
+
+/* =====================================================
+   BOOKING BAR
+===================================================== */
+
+.booking-wrap{
+    margin-top:-48px;
+    position:relative;
+    z-index:10;
+}
+
+.booking-box{
+    background:white;
+    box-shadow:0 20px 60px rgba(0,0,0,.15);
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 170px;
+}
+
+.booking-field{
+    padding:22px;
+    border-right:1px solid var(--border);
+}
+
+.booking-field label{
+    display:block;
+    font-size:8px;
+    color:#888;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    margin-bottom:8px;
+}
+
+.booking-field input,
+.booking-field select{
+    width:100%;
+    border:0;
+    outline:0;
+    color:#222;
+    background:transparent;
+    font-size:13px;
+}
+
+.booking-submit{
+    border:0;
+    background:var(--orange);
+    color:#111;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   TRUST BAR
+===================================================== */
+
+.trust{
+    background:white;
+    padding:28px 0;
+    border-bottom:1px solid var(--border);
+}
+
+.trust-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.trust-item{
+    text-align:center;
+    border-right:1px solid var(--border);
+}
+
+.trust-item:last-child{
+    border:0;
+}
+
+.trust-item strong{
+    display:block;
+    font-size:24px;
+    color:#222;
+}
+
+.trust-item span{
+    color:#888;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about{
+    background:var(--cream);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:85px;
+    align-items:center;
+}
+
+.about-image{
+    position:relative;
+}
+
+.about-image img{
+    height:580px;
+    object-fit:cover;
+}
+
+.about-card{
+    position:absolute;
+    right:-25px;
+    bottom:30px;
+    background:var(--black);
+    color:white;
+    width:180px;
+    padding:28px;
+}
+
+.about-card strong{
+    color:var(--orange2);
+    font-size:42px;
+    display:block;
+}
+
+.about-card span{
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#aaa;
+}
+
+
+/* =====================================================
+   VEHICLES
+===================================================== */
+
+.vehicles{
+    background:white;
+}
+
+.section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:30px;
+    margin-bottom:50px;
+}
+
+.section-head .description{
+    max-width:420px;
+}
+
+.vehicle-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.vehicle{
+    background:#f5f2eb;
+    overflow:hidden;
+    transition:.35s;
+}
+
+.vehicle:hover{
+    transform:translateY(-7px);
+    box-shadow:0 20px 45px rgba(0,0,0,.1);
+}
+
+.vehicle-image{
+    height:250px;
+    overflow:hidden;
+    position:relative;
+}
+
+.vehicle-image img{
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.vehicle:hover .vehicle-image img{
+    transform:scale(1.06);
+}
+
+.vehicle-tag{
+    position:absolute;
+    left:15px;
+    top:15px;
+    background:var(--orange);
+    color:#111;
+    padding:7px 10px;
+    font-size:8px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-weight:700;
+}
+
+.vehicle-content{
+    padding:25px;
+}
+
+.vehicle-content h3{
+    font-family:"Playfair Display",serif;
+    font-size:29px;
+}
+
+.vehicle-content p{
+    color:#777;
+    font-size:12px;
+    line-height:1.7;
+    margin:10px 0 20px;
+}
+
+.vehicle-meta{
+    border-top:1px solid #ddd7ce;
+    padding-top:16px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.vehicle-price{
+    font-weight:700;
+}
+
+.vehicle-price small{
+    font-weight:400;
+    color:#888;
+}
+
+
+/* =====================================================
+   FARE CALCULATOR
+===================================================== */
+
+.fare-section{
+    background:var(--black);
+    color:white;
+}
+
+.fare-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.fare-section .title{
+    color:white;
+}
+
+.fare-section .description{
+    color:#999;
+}
+
+.fare-features{
+    margin-top:35px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.fare-feature{
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,.1);
+    color:#bbb;
+    font-size:12px;
+}
+
+.fare-feature span{
+    color:var(--orange2);
+    margin-right:10px;
+}
+
+.calculator{
+    background:#211f1c;
+    padding:35px;
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.calculator h3{
+    font-family:"Playfair Display",serif;
+    font-size:34px;
+    margin-bottom:25px;
+}
+
+.calc-field{
+    margin-bottom:16px;
+}
+
+.calc-field label{
+    display:block;
+    color:#999;
+    text-transform:uppercase;
+    font-size:8px;
+    letter-spacing:1.5px;
+    margin-bottom:8px;
+}
+
+.calc-field select{
+    width:100%;
+    padding:14px;
+    border:1px solid #444;
+    background:#151515;
+    color:white;
+    outline:none;
+}
+
+.calculate-btn{
+    width:100%;
+    padding:16px;
+    border:0;
+    background:var(--orange);
+    color:#111;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-weight:700;
+    cursor:pointer;
+    margin-top:8px;
+}
+
+.fare-result{
+    margin-top:22px;
+    background:#151515;
+    padding:20px;
+    display:none;
+}
+
+.fare-result.show{
+    display:block;
+}
+
+.fare-result small{
+    color:#888;
+    display:block;
+}
+
+.fare-result strong{
+    color:var(--orange2);
+    font-size:32px;
+    display:block;
+    margin-top:5px;
+}
+
+
+/* =====================================================
+   TOURS
+===================================================== */
+
+.tours{
+    background:var(--cream);
+}
+
+.tour-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.tour{
+    min-height:430px;
+    position:relative;
+    color:white;
+    overflow:hidden;
+    display:flex;
+    align-items:end;
+}
+
+.tour::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent 25%,rgba(0,0,0,.85));
+    z-index:1;
+}
+
+.tour img{
+    position:absolute;
+    inset:0;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.tour:hover img{
+    transform:scale(1.08);
+}
+
+.tour-content{
+    position:relative;
+    z-index:2;
+    padding:30px;
+}
+
+.tour-content span{
+    color:var(--orange2);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:8px;
+}
+
+.tour-content h3{
+    font-family:"Playfair Display",serif;
+    font-size:32px;
+    margin:8px 0;
+}
+
+.tour-content p{
+    color:#ddd;
+    font-size:11px;
+    line-height:1.6;
+}
+
+.tour-content a{
+    display:inline-block;
+    margin-top:15px;
+    color:var(--orange2);
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+
+/* =====================================================
+   WHY US
+===================================================== */
+
+.why{
+    background:white;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    margin-top:55px;
+}
+
+.why-card{
+    padding:40px 28px;
+    border:1px solid var(--border);
+    margin:-1px 0 0 -1px;
+    transition:.3s;
+}
+
+.why-card:hover{
+    background:#faf7f0;
+}
+
+.why-icon{
+    font-size:28px;
+    color:var(--orange);
+    margin-bottom:20px;
+}
+
+.why-card h3{
+    font-family:"Playfair Display",serif;
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.why-card p{
+    color:#777;
+    font-size:11px;
+    line-height:1.8;
+}
+
+
+/* =====================================================
+   BOOKING FORM
+===================================================== */
+
+.booking{
+    background:#eee7db;
+}
+
+.booking-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:80px;
+    align-items:start;
+}
+
+.booking-copy h2{
+    font-family:"Playfair Display",serif;
+    font-size:65px;
+    line-height:.95;
+}
+
+.booking-copy p{
+    color:#777;
+    line-height:1.8;
+    margin:22px 0;
+}
+
+.contact-line{
+    padding:14px 0;
+    border-bottom:1px solid #d7d0c5;
+    font-size:12px;
+}
+
+.contact-line strong{
+    color:#b47813;
+    width:75px;
+    display:inline-block;
+    text-transform:uppercase;
+    font-size:8px;
+    letter-spacing:1px;
+}
+
+.booking-form{
+    background:white;
+    padding:38px;
+    box-shadow:0 20px 60px rgba(0,0,0,.08);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+.form-group label{
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#777;
+    font-size:8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    border:1px solid #ddd6cb;
+    background:#faf9f6;
+    padding:14px;
+    outline:none;
+}
+
+.form-group textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+.form-submit{
+    width:100%;
+    border:0;
+    padding:17px;
+    background:var(--black);
+    color:white;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-weight:700;
+    cursor:pointer;
+    margin-top:18px;
+}
+
+.form-submit:hover{
+    background:var(--orange);
+    color:#111;
+}
+
+
+/* =====================================================
+   TESTIMONIALS
+===================================================== */
+
+.testimonials{
+    background:white;
+    text-align:center;
+}
+
+.testimonial-box{
+    max-width:800px;
+    margin:50px auto 0;
+}
+
+.quote-mark{
+    font-family:"Playfair Display",serif;
+    color:var(--orange);
+    font-size:80px;
+    line-height:.5;
+}
+
+.quote{
+    font-family:"Playfair Display",serif;
+    font-size:38px;
+    line-height:1.3;
+}
+
+.reviewer{
+    margin-top:25px;
+    color:#888;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:9px;
+}
+
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+.faq{
+    background:var(--cream);
+}
+
+.faq-list{
+    max-width:850px;
+    margin:50px auto 0;
+}
+
+.faq-item{
+    border-bottom:1px solid #d9d3c9;
+}
+
+.faq-question{
+    width:100%;
+    border:0;
+    background:none;
+    padding:22px 0;
+    text-align:left;
+    display:flex;
+    justify-content:space-between;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:600;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:.35s;
+}
+
+.faq-answer p{
+    color:#777;
+    font-size:12px;
+    line-height:1.8;
+    padding-bottom:20px;
+}
+
+.faq-item.active .faq-answer{
+    max-height:200px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:#0c0c0c;
+    color:white;
+    padding:70px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1fr;
+    gap:50px;
+    padding-bottom:55px;
+}
+
+.footer-brand p{
+    color:#777;
+    max-width:310px;
+    font-size:12px;
+    line-height:1.8;
+    margin-top:18px;
+}
+
+.footer-title{
+    color:var(--orange2);
+    font-size:9px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.footer-links a{
+    color:#888;
+    font-size:11px;
+}
+
+.footer-links a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.08);
+    padding-top:20px;
+    display:flex;
+    justify-content:space-between;
+    color:#555;
+    font-size:9px;
+}
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+.whatsapp{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    background:#25D366;
+    color:white;
+
+    display:grid;
+    place-items:center;
+
+    z-index:200;
+
+    font-size:23px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.1);
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:30px;
+
+    transform:translate(-50%,120px);
+
+    background:#111;
+    color:white;
+
+    padding:15px 25px;
+
+    z-index:500;
+
+    border-left:3px solid var(--orange);
+
+    font-size:11px;
+
+    transition:.35s;
+}
+
+.toast.show{
+    transform:translate(-50%,0);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:950px){
+
+    .nav-links{
+        display:none;
+
+        position:absolute;
+        top:80px;
+        left:4%;
+        width:92%;
+
+        background:#151515;
+
+        padding:25px;
+
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-book{
+        display:none;
+    }
+
+    .booking-box{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .booking-submit{
+        min-height:60px;
+    }
+
+    .about-grid,
+    .fare-grid,
+    .booking-grid{
+        grid-template-columns:1fr;
+    }
+
+    .vehicle-grid,
+    .tour-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .topbar{
+        display:none;
+    }
+
+    .navbar{
+        top:0;
+        padding:17px 5%;
+    }
+
+    .hero{
+        min-height:750px;
+    }
+
+    .hero h1{
+        font-size:58px;
+    }
+
+    .booking-wrap{
+        margin-top:-25px;
+    }
+
+    .booking-box{
+        grid-template-columns:1fr;
+    }
+
+    .booking-field{
+        border-right:0;
+        border-bottom:1px solid var(--border);
+    }
+
+    .trust-grid{
+        grid-template-columns:1fr 1fr;
+        gap:25px 0;
+    }
+
+    .trust-item:nth-child(2){
+        border:0;
+    }
+
+    .trust-item:nth-child(3),
+    .trust-item:nth-child(4){
+        border-top:1px solid var(--border);
+        padding-top:20px;
+    }
+
+    .about-image img{
+        height:430px;
+    }
+
+    .about-card{
+        right:10px;
+    }
+
+    .section{
+        padding:75px 0;
+    }
+
+    .section-head{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .vehicle-grid,
+    .tour-grid,
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .calculator{
+        padding:25px;
+    }
+
+    .booking-copy h2{
+        font-size:50px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .booking-form{
+        padding:25px;
+    }
+
+    .quote{
+        font-size:29px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:10px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="topbar">
+
+    <span>
+        Premium Cab & Tour Services • Braj Region
+    </span>
+
+    <span>
+        <strong>24/7 Booking Support</strong>
+    </span>
+
+</div>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar" id="navbar">
+
+    <div class="nav-inner">
+
+        <a href="#home" class="logo">
+
+            <div class="logo-icon">
+                BR
+            </div>
+
+            <div class="logo-text">
+
+                BRAJ RIDE
+
+                <small>
+                    TAXI • TOURS • TRAVEL
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <nav class="nav-links" id="navLinks">
+
+            <a href="#home">Home</a>
+
+            <a href="#vehicles">Vehicles</a>
+
+            <a href="#tours">Tours</a>
+
+            <a href="#fare">Fare</a>
+
+            <a href="#booking">Booking</a>
+
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+
+        <a
+            href="#booking"
+            class="nav-book"
+        >
+            Book A Cab
+        </a>
+
+
+        <button
+            class="menu-btn"
+            id="menuBtn"
+        >
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-kicker">
+                Premium Travel Across Braj
+            </div>
+
+            <h1>
+                Your Journey.
+                <span>Our Ride.</span>
+            </h1>
+
+            <p>
+                Comfortable cabs, professional drivers and
+                personalised local tours for travellers exploring
+                Vrindavan, Mathura and beyond.
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a
+                    href="#booking"
+                    class="btn btn-orange"
+                >
+                    Book Your Ride
+                </a>
+
+                <a
+                    href="#tours"
+                    class="btn btn-outline"
+                >
+                    Explore Tours
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BOOKING BAR
+===================================================== -->
+
+<div class="container booking-wrap">
+
+    <div class="booking-box">
+
+        <div class="booking-field">
+
+            <label>
+                Pickup
+            </label>
+
+            <input
+                id="pickup"
+                type="text"
+                placeholder="e.g. Vrindavan"
+            >
+
+        </div>
+
+
+        <div class="booking-field">
+
+            <label>
+                Drop
+            </label>
+
+            <input
+                id="drop"
+                type="text"
+                placeholder="e.g. Mathura"
+            >
+
+        </div>
+
+
+        <div class="booking-field">
+
+            <label>
+                Travel Date
+            </label>
+
+            <input
+                id="travelDate"
+                type="date"
+            >
+
+        </div>
+
+
+        <div class="booking-field">
+
+            <label>
+                Vehicle
+            </label>
+
+            <select id="quickVehicle">
+
+                <option>Sedan</option>
+                <option>SUV</option>
+                <option>Luxury</option>
+                <option>Tempo Traveller</option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            class="booking-submit"
+            onclick="quickBooking()"
+        >
+            Get Quote
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TRUST
+===================================================== -->
+
+<section class="trust">
+
+    <div class="container trust-grid">
+
+        <div class="trust-item">
+
+            <strong>24/7</strong>
+
+            <span>
+                Booking Support
+            </span>
+
+        </div>
+
+
+        <div class="trust-item">
+
+            <strong>50+</strong>
+
+            <span>
+                Vehicles
+            </span>
+
+        </div>
+
+
+        <div class="trust-item">
+
+            <strong>1000+</strong>
+
+            <span>
+                Happy Trips
+            </span>
+
+        </div>
+
+
+        <div class="trust-item">
+
+            <strong>4.9★</strong>
+
+            <span>
+                Guest Rating
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="section about">
+
+    <div class="container about-grid">
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=85"
+                alt="Road trip"
+            >
+
+            <div class="about-card">
+
+                <strong>100%</strong>
+
+                <span>
+                    Focused On Your Journey
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="label">
+                Travel With Confidence
+            </div>
+
+            <h2 class="title">
+                The Ride
+                Is Part Of
+                The Journey.
+            </h2>
+
+            <p class="description">
+                Braj Ride is a fictional premium taxi and travel
+                brand created for this website portfolio demo.
+                The concept is designed for local cab operators,
+                tour companies and travel agencies.
+            </p>
+
+            <p class="description">
+                From airport transfers to full-day Braj tours,
+                customers can discover routes, choose vehicles
+                and send booking requests directly through
+                WhatsApp.
+            </p>
+
+            <a
+                href="#booking"
+                class="btn btn-orange"
+                style="margin-top:28px;"
+            >
+                Plan My Journey
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     VEHICLES
+===================================================== -->
+
+<section
+    class="section vehicles"
+    id="vehicles"
+>
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div>
+
+                <div class="label">
+                    Our Fleet
+                </div>
+
+                <h2 class="title">
+                    Choose Your Ride.
+                </h2>
+
+            </div>
+
+            <p class="description">
+                Comfortable vehicles for solo travellers,
+                families, groups and premium travel.
+            </p>
+
+        </div>
+
+
+        <div class="vehicle-grid">
+
+
+            <!-- SEDAN -->
+
+            <article class="vehicle">
+
+                <div class="vehicle-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=1000&q=85"
+                        alt="Sedan taxi"
+                    >
+
+                    <span class="vehicle-tag">
+                        Popular
+                    </span>
+
+                </div>
+
+                <div class="vehicle-content">
+
+                    <h3>
+                        Premium Sedan
+                    </h3>
+
+                    <p>
+                        Comfortable option for couples,
+                        small families and city transfers.
+                    </p>
+
+                    <div class="vehicle-meta">
+
+                        <div class="vehicle-price">
+                            From ₹1,499
+                            <small>/ trip</small>
+                        </div>
+
+                        <a
+                            href="#booking"
+                            style="color:#d68b14;font-size:9px;"
+                        >
+                            BOOK →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- SUV -->
+
+            <article class="vehicle">
+
+                <div class="vehicle-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=85"
+                        alt="SUV taxi"
+                    >
+
+                    <span class="vehicle-tag">
+                        Family
+                    </span>
+
+                </div>
+
+                <div class="vehicle-content">
+
+                    <h3>
+                        Premium SUV
+                    </h3>
+
+                    <p>
+                        Extra space and comfort for families
+                        travelling together.
+                    </p>
+
+                    <div class="vehicle-meta">
+
+                        <div class="vehicle-price">
+                            From ₹2,499
+                            <small>/ trip</small>
+                        </div>
+
+                        <a
+                            href="#booking"
+                            style="color:#d68b14;font-size:9px;"
+                        >
+                            BOOK →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- TEMPO -->
+
+            <article class="vehicle">
+
+                <div class="vehicle-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1000&q=85"
+                        alt="Travel vehicle"
+                    >
+
+                    <span class="vehicle-tag">
+                        Groups
+                    </span>
+
+                </div>
+
+                <div class="vehicle-content">
+
+                    <h3>
+                        Tempo Traveller
+                    </h3>
+
+                    <p>
+                        A practical choice for larger families,
+                        groups and multi-stop tours.
+                    </p>
+
+                    <div class="vehicle-meta">
+
+                        <div class="vehicle-price">
+                            From ₹4,499
+                            <small>/ day</small>
+                        </div>
+
+                        <a
+                            href="#booking"
+                            style="color:#d68b14;font-size:9px;"
+                        >
+                            BOOK →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FARE CALCULATOR
+===================================================== -->
+
+<section
+    class="section fare-section"
+    id="fare"
+>
+
+    <div class="container fare-grid">
+
+        <div>
+
+            <div class="label">
+                Instant Estimate
+            </div>
+
+            <h2 class="title">
+                Know Your
+                Approximate Fare.
+            </h2>
+
+            <p class="description">
+                Select your route type and vehicle to get a
+                demo fare estimate. Final pricing can be
+                confirmed by the travel operator.
+            </p>
+
+
+            <div class="fare-features">
+
+                <div class="fare-feature">
+                    <span>✓</span>
+                    Transparent estimated pricing
+                </div>
+
+                <div class="fare-feature">
+                    <span>✓</span>
+                    Multiple vehicle categories
+                </div>
+
+                <div class="fare-feature">
+                    <span>✓</span>
+                    Local and outstation journeys
+                </div>
+
+                <div class="fare-feature">
+                    <span>✓</span>
+                    WhatsApp booking assistance
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="calculator">
+
+            <h3>
+                Fare Calculator
+            </h3>
+
+
+            <div class="calc-field">
+
+                <label>
+                    Journey
+                </label>
+
+                <select id="journeyType">
+
+                    <option value="local">
+                        Local / City Ride
+                    </option>
+
+                    <option value="airport">
+                        Airport Transfer
+                    </option>
+
+                    <option value="outstation">
+                        Outstation
+                    </option>
+
+                    <option value="fullDay">
+                        Full Day Tour
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="calc-field">
+
+                <label>
+                    Vehicle
+                </label>
+
+                <select id="calcVehicle">
+
+                    <option value="sedan">
+                        Premium Sedan
+                    </option>
+
+                    <option value="suv">
+                        Premium SUV
+                    </option>
+
+                    <option value="tempo">
+                        Tempo Traveller
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="calc-field">
+
+                <label>
+                    Distance
+                </label>
+
+                <select id="distance">
+
+                    <option value="20">
+                        Up to 20 km
+                    </option>
+
+                    <option value="50">
+                        20–50 km
+                    </option>
+
+                    <option value="100">
+                        50–100 km
+                    </option>
+
+                    <option value="200">
+                        100–200 km
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                class="calculate-btn"
+                onclick="calculateFare()"
+            >
+                Calculate Estimate
+            </button>
+
+
+            <div
+                class="fare-result"
+                id="fareResult"
+            >
+
+                <small>
+                    Estimated starting fare
+                </small>
+
+                <strong id="fareAmount">
+                    ₹1,499
+                </strong>
+
+                <small>
+                    Final fare may vary by route,
+                    waiting time and operator pricing.
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TOURS
+===================================================== -->
+
+<section
+    class="section tours"
+    id="tours"
+>
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div>
+
+                <div class="label">
+                    Explore Braj
+                </div>
+
+                <h2 class="title">
+                    Curated Local Tours.
+                </h2>
+
+            </div>
+
+            <p class="description">
+                Ready-made tour concepts that can be customised
+                according to the customer's schedule.
+            </p>
+
+        </div>
+
+
+        <div class="tour-grid">
+
+
+            <article class="tour">
+
+                <img
+                    src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=85"
+                    alt="Vrindavan tour"
+                >
+
+                <div class="tour-content">
+
+                    <span>
+                        Full Day
+                    </span>
+
+                    <h3>
+                        Vrindavan Discovery
+                    </h3>
+
+                    <p>
+                        A relaxed day exploring major areas
+                        and local experiences around Vrindavan.
+                    </p>
+
+                    <a href="#booking">
+                        Enquire Now →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="tour">
+
+                <img
+                    src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1000&q=85"
+                    alt="India travel"
+                >
+
+                <div class="tour-content">
+
+                    <span>
+                        Full Day
+                    </span>
+
+                    <h3>
+                        Mathura Heritage
+                    </h3>
+
+                    <p>
+                        Discover a customised route connecting
+                        important local destinations.
+                    </p>
+
+                    <a href="#booking">
+                        Enquire Now →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="tour">
+
+                <img
+                    src="https://images.unsplash.com/photo-1524498250077-390f9e378fc0?auto=format&fit=crop&w=1000&q=85"
+                    alt="Agra travel"
+                >
+
+                <div class="tour-content">
+
+                    <span>
+                        Day Trip
+                    </span>
+
+                    <h3>
+                        Agra Escape
+                    </h3>
+
+                    <p>
+                        Plan a comfortable private vehicle journey
+                        for an outstation day trip.
+                    </p>
+
+                    <a href="#booking">
+                        Enquire Now →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     WHY US
+===================================================== -->
+
+<section class="section why">
+
+    <div class="container">
+
+        <div class="label">
+            Why Braj Ride
+        </div>
+
+        <h2 class="title">
+            Travel Without
+            The Stress.
+        </h2>
+
+
+        <div class="why-grid">
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    ◉
+                </div>
+
+                <h3>
+                    Local Drivers
+                </h3>
+
+                <p>
+                    Drivers familiar with local routes and
+                    travel requirements.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    ◇
+                </div>
+
+                <h3>
+                    Clean Vehicles
+                </h3>
+
+                <p>
+                    Vehicle presentation and passenger comfort
+                    are part of the service concept.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    ₹
+                </div>
+
+                <h3>
+                    Clear Pricing
+                </h3>
+
+                <p>
+                    Customers can request an estimate before
+                    confirming their journey.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    ☎
+                </div>
+
+                <h3>
+                    Easy Booking
+                </h3>
+
+                <p>
+                    Quick booking requests through WhatsApp
+                    make the enquiry process simple.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BOOKING
+===================================================== -->
+
+<section
+    class="section booking"
+    id="booking"
+>
+
+    <div class="container booking-grid">
+
+        <div class="booking-copy">
+
+            <div class="label">
+                Reserve Your Ride
+            </div>
+
+            <h2>
+                Let's Plan
+                Your Journey.
+            </h2>
+
+            <p>
+                Tell us where you want to go, when you want
+                to travel and which vehicle you prefer.
+            </p>
+
+
+            <div class="contact-line">
+                <strong>Phone</strong>
+                +91 98765 43210
+            </div>
+
+            <div class="contact-line">
+                <strong>WhatsApp</strong>
+                Available 24/7
+            </div>
+
+            <div class="contact-line">
+                <strong>Area</strong>
+                Vrindavan • Mathura • Braj
+            </div>
+
+        </div>
+
+
+        <div class="booking-form">
+
+            <form id="bookingForm">
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Name
+                        </label>
+
+                        <input
+                            id="name"
+                            type="text"
+                            placeholder="Your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Phone
+                        </label>
+
+                        <input
+                            id="phone"
+                            type="tel"
+                            placeholder="+91"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Pickup
+                        </label>
+
+                        <input
+                            id="formPickup"
+                            type="text"
+                            placeholder="Pickup location"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Destination
+                        </label>
+
+                        <input
+                            id="formDrop"
+                            type="text"
+                            placeholder="Where are you going?"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Travel Date
+                        </label>
+
+                        <input
+                            id="formDate"
+                            type="date"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Vehicle
+                        </label>
+
+                        <select id="formVehicle">
+
+                            <option>Premium Sedan</option>
+                            <option>Premium SUV</option>
+                            <option>Luxury Car</option>
+                            <option>Tempo Traveller</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label>
+                            Additional Details
+                        </label>
+
+                        <textarea
+                            id="formMessage"
+                            placeholder="Airport pickup, number of passengers, tour requirements etc."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="form-submit"
+                    type="submit"
+                >
+                    Send Booking Request
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TESTIMONIALS
+===================================================== -->
+
+<section class="section testimonials">
+
+    <div class="container">
+
+        <div class="label">
+            Traveller Stories
+        </div>
+
+        <h2 class="title">
+            Journeys People Remember.
+        </h2>
+
+
+        <div class="testimonial-box">
+
+            <div class="quote-mark">
+                “
+            </div>
+
+            <div
+                class="quote"
+                id="quote"
+            >
+                The booking process was simple and the entire
+                journey felt comfortable from start to finish.
+            </div>
+
+            <div
+                class="reviewer"
+                id="reviewer"
+            >
+                — Neha Sharma • Family Trip
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FAQ
+===================================================== -->
+
+<section class="section faq">
+
+    <div class="container">
+
+        <div style="text-align:center;">
+
+            <div class="label">
+                Need To Know
+            </div>
+
+            <h2 class="title">
+                Frequently Asked Questions.
+            </h2>
+
+        </div>
+
+
+        <div class="faq-list">
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Can I book a cab for a full day?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. Full-day vehicle packages can be
+                        offered by the operator depending on
+                        vehicle availability and route.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Do you provide airport transfers?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Airport transfer bookings can be requested
+                        through the booking form or WhatsApp.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Can I customise a local tour?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. Customers can request customised
+                        routes, timings and vehicle options.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    How do I confirm my booking?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Submit the enquiry and the operator can
+                        confirm availability, final pricing and
+                        payment requirements directly.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer id="contact">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <div class="footer-brand">
+
+                <a href="#home" class="logo">
+
+                    <div class="logo-icon">
+                        BR
+                    </div>
+
+                    <div class="logo-text">
+                        BRAJ RIDE
+
+                        <small>
+                            TAXI • TOURS • TRAVEL
+                        </small>
+                    </div>
+
+                </a>
+
+                <p>
+                    A fictional premium taxi and travel website
+                    concept designed for local travel businesses
+                    in the Braj region.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Services
+                </div>
+
+                <div class="footer-links">
+                    <a href="#booking">Cab Booking</a>
+                    <a href="#vehicles">Airport Transfer</a>
+                    <a href="#tours">Local Tours</a>
+                    <a href="#tours">Outstation</a>
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Explore
+                </div>
+
+                <div class="footer-links">
+                    <a href="#vehicles">Fleet</a>
+                    <a href="#fare">Fare Calculator</a>
+                    <a href="#tours">Tour Packages</a>
+                    <a href="#booking">Booking</a>
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Contact
+                </div>
+
+                <div class="footer-links">
+                    <a href="tel:+919876543210">
+                        +91 98765 43210
+                    </a>
+
+                    <a href="https://wa.me/919876543210">
+                        WhatsApp
+                    </a>
+
+                    <a href="#">
+                        Vrindavan • Mathura
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Braj Ride — Demo Website
+            </span>
+
+            <span>
+                Ride • Explore • Discover
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     WHATSAPP
+===================================================== -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/919876543210"
+    target="_blank"
+>
+    ☎
+</a>
+
+
+<div
+    class="toast"
+    id="toast"
+>
+    Opening WhatsApp...
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY > 80){
+
+        navbar.classList.add("scrolled");
+
+    }else{
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const navLinks =
+document.getElementById("navLinks");
+
+menuBtn.addEventListener("click",()=>{
+
+    navLinks.classList.toggle("active");
+
+});
+
+document.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
+
+
+/* =====================================================
+   DATE
+===================================================== */
+
+const today =
+new Date().toISOString().split("T")[0];
+
+document.getElementById("travelDate").min = today;
+document.getElementById("formDate").min = today;
+
+
+/* =====================================================
+   QUICK BOOKING
+===================================================== */
+
+function quickBooking(){
+
+    const pickup =
+    document.getElementById("pickup").value;
+
+    const drop =
+    document.getElementById("drop").value;
+
+    const date =
+    document.getElementById("travelDate").value;
+
+    const vehicle =
+    document.getElementById("quickVehicle").value;
+
+
+    if(!pickup || !drop || !date){
+
+        showToast(
+            "Please enter pickup, destination and date."
+        );
+
+        return;
+
+    }
+
+
+    const message =
+    `Hello Braj Ride,%0A%0A`+
+    `I want to book a cab.%0A%0A`+
+    `Pickup: ${pickup}%0A`+
+    `Destination: ${drop}%0A`+
+    `Date: ${date}%0A`+
+    `Vehicle: ${vehicle}`;
+
+
+    window.open(
+        `https://wa.me/919876543210?text=${message}`,
+        "_blank"
+    );
+
+}
+
+
+/* =====================================================
+   FARE CALCULATOR
+===================================================== */
+
+function calculateFare(){
+
+    const journey =
+    document.getElementById("journeyType").value;
+
+    const vehicle =
+    document.getElementById("calcVehicle").value;
+
+    const distance =
+    Number(document.getElementById("distance").value);
+
+
+    let base = 0;
+
+
+    /* Journey pricing */
+
+    if(journey === "local"){
+        base = 900;
+    }
+
+    if(journey === "airport"){
+        base = 1400;
+    }
+
+    if(journey === "outstation"){
+        base = 1800;
+    }
+
+    if(journey === "fullDay"){
+        base = 2500;
+    }
+
+
+    /* Vehicle multiplier */
+
+    if(vehicle === "suv"){
+        base *= 1.45;
+    }
+
+    if(vehicle === "tempo"){
+        base *= 2.1;
+    }
+
+
+    /* Distance adjustment */
+
+    if(distance === 50){
+        base += 500;
+    }
+
+    if(distance === 100){
+        base += 1200;
+    }
+
+    if(distance === 200){
+        base += 2500;
+    }
+
+
+    const finalFare =
+    Math.round(base / 100) * 100;
+
+
+    document.getElementById("fareAmount")
+    .textContent =
+    "₹" + finalFare.toLocaleString("en-IN");
+
+
+    document.getElementById("fareResult")
+    .classList.add("show");
+
+}
+
+
+/* =====================================================
+   BOOKING FORM
+===================================================== */
+
+document.getElementById("bookingForm")
+.addEventListener("submit",(e)=>{
+
+    e.preventDefault();
+
+
+    const name =
+    document.getElementById("name").value;
+
+    const phone =
+    document.getElementById("phone").value;
+
+    const pickup =
+    document.getElementById("formPickup").value;
+
+    const drop =
+    document.getElementById("formDrop").value;
+
+    const date =
+    document.getElementById("formDate").value;
+
+    const vehicle =
+    document.getElementById("formVehicle").value;
+
+    const details =
+    document.getElementById("formMessage").value;
+
+
+    const message =
+    `Hello Braj Ride,%0A%0A`+
+    `I want to make a booking.%0A%0A`+
+    `Name: ${name}%0A`+
+    `Phone: ${phone}%0A`+
+    `Pickup: ${pickup}%0A`+
+    `Destination: ${drop}%0A`+
+    `Travel Date: ${date}%0A`+
+    `Vehicle: ${vehicle}%0A`+
+    `Details: ${details || "None"}`;
+
+
+    showToast(
+        "Opening WhatsApp booking..."
+    );
+
+
+    setTimeout(()=>{
+
+        window.open(
+            `https://wa.me/919876543210?text=${message}`,
+            "_blank"
+        );
+
+    },700);
+
+});
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+function showToast(text){
+
+    const toast =
+    document.getElementById("toast");
+
+    toast.textContent = text;
+
+    toast.classList.add("show");
+
+
+    setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+
+/* =====================================================
+   TESTIMONIAL SLIDER
+===================================================== */
+
+const reviews = [
+
+    {
+        quote:
+        "The booking process was simple and the entire journey felt comfortable from start to finish.",
+
+        person:
+        "— Neha Sharma • Family Trip"
+    },
+
+    {
+        quote:
+        "We used the cab for a full-day local tour and the experience was smooth and convenient.",
+
+        person:
+        "— Rahul Verma • Weekend Trip"
+    },
+
+    {
+        quote:
+        "A clean vehicle, simple booking and a comfortable journey made our trip much easier.",
+
+        person:
+        "— Ankit Gupta • Family Travel"
+    }
+
+];
+
+let reviewIndex = 0;
+
+
+setInterval(()=>{
+
+    reviewIndex++;
+
+    if(reviewIndex >= reviews.length){
+        reviewIndex = 0;
+    }
+
+
+    document.getElementById("quote")
+    .style.opacity="0";
+
+    document.getElementById("reviewer")
+    .style.opacity="0";
+
+
+    setTimeout(()=>{
+
+        document.getElementById("quote")
+        .textContent =
+        reviews[reviewIndex].quote;
+
+        document.getElementById("reviewer")
+        .textContent =
+        reviews[reviewIndex].person;
+
+
+        document.getElementById("quote")
+        .style.opacity="1";
+
+        document.getElementById("reviewer")
+        .style.opacity="1";
+
+    },300);
+
+},5000);
+
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+document.querySelectorAll(".faq-question")
+.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        const item =
+        button.parentElement;
+
+        item.classList.toggle("active");
+
+
+        const symbol =
+        button.querySelector("span");
+
+
+        if(item.classList.contains("active")){
+
+            symbol.textContent = "−";
+
+        }else{
+
+            symbol.textContent = "+";
+
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
